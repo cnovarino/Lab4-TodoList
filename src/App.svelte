@@ -22,7 +22,6 @@
 
 </script>
 
-
 <Container>
 	<Row>
 		<Col sm="12" md={{ size: 6, offset: 3 }}>
@@ -34,13 +33,12 @@
 				</CardHeader>
 				<CardBody>
 					<Form on:submit={event => addTodo(event)}>
-						<Input bind:value={todoInput} on: placeholder="Nueva Tarea" autofocus />
+						<Input bind:value={todoInput} placeholder="Nueva Tarea" autofocus />
 					</Form>
 				</CardBody>
 			</Card>
 			<Card>
 				<CardBody>
-
 					<ListGroup>
 						{#if items.length === 0}
 							<CardText>
