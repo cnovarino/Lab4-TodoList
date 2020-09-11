@@ -20,7 +20,18 @@
 		todoInput = "";
 	}
 
+	function deleteTodo(todo){
+		items = items.filter(function (item){ return item.id !== todo.id});
+	}
+
 </script>
+
+<style>
+	.delete_todo {
+		color: red;
+		font-weight: bold;
+	}
+</style>
 
 <Container>
 	<Row>
@@ -48,9 +59,12 @@
 							{#each items as item}
 								<ListGroupItem>
 									<Row>
-										<Col xs="10">{item.text}</Col>
+										<Col xs="9">{item.text}</Col>
 										<Col xs="2">
 											<input bind:group={completedItems} value="{item.id}" type="checkbox" />
+										</Col>
+										<Col>
+											<a on:click={_ => deleteTodo(item)} class="delete_todo" href="#">X</a>
 										</Col>
 									</Row>
 								</ListGroupItem>
