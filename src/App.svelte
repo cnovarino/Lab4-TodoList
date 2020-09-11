@@ -126,12 +126,12 @@
 						{/if}
 					</ListGroup>
 					<CardFooter>
-						{#if completedItems.length === 0}
+						{#if items.filter(item => item[2] === 1).length === 0}
 							No hay tareas campletadas
-						{:else if completedItems.length === 1}
+						{:else if items.filter(item => item[2] === 1).length === 1}
 							1 Tarea Completada
 						{:else}
-							{completedItems.length} Tareas Completadas
+							{items.filter(item => item[2] === 1).length} Tareas Completadas
 						{/if}
 					</CardFooter>
 				</CardBody>
